@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VetCare+ | Blog</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body class="font-sans text-gray-800 scroll-smooth bg-gradient-to-br from-sky-50 via-emerald-50 to-lime-50">
+
+<!-- ===== NAVBAR ===== -->
+<header class="fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur shadow">
+  <div class="container mx-auto flex items-center justify-between px-4 py-3">
+    <a href="index.html" class="text-xl font-bold text-indigo-600">PATITAS FELICES</a>
+    <nav class="space-x-4 font-medium hidden md:inline-block">
+      <a href="index.html"       class="hover:text-indigo-600">Inicio</a>
+      <a href="servicios.html"   class="hover:text-indigo-600">Servicios</a>
+      <a href="equipo.html"      class="hover:text-indigo-600">Equipo</a>
+      <a href="blog.html"        class="text-indigo-600 font-semibold">Blog</a>
+      <a href="promociones.html" class="hover:text-indigo-600">Promos</a>
+      <a href="atencion.html"    class="hover:text-indigo-600">Atención</a>
+      <a href="contacto.html"    class="hover:text-indigo-600">Contactanos</a>
+      <a href="carrito.html"     class="relative hover:text-indigo-600">
+        Carrito
+        <span id="cart-count" class="absolute -top-2 -right-3 bg-red-500 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">0</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<div class="pt-20"></div>
+
+<!-- ===== BLOG ===== -->
+<section class="py-24">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-extrabold text-center text-gray-800 mb-16" data-aos="fade-up">Nuestro Blog</h2>
+
+    <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-8" id="blogGrid">
+
+      <!-- Card plantilla -->
+      <article class="blogCard" data-aos="fade-up"
+               data-title="5 señales de alerta en tu gato"
+               data-img="img/5 señales de alerta en tu gato.png"
+               data-content="<p>Los gatos tienden a ocultar el dolor. Presta atención a:<br>1. Pérdida de apetito.<br>2. Ocultarse más de lo normal.<br>3. Cambios en el pelaje.<br>4. Vocalizaciones inusuales.<br>5. Pérdida de peso repentina.</p><p>Si notas alguna, agenda una cita inmediatamente.</p>">
+        <img src="img/5 señales de alerta en tu gato.png" class="w-full h-44 object-cover" alt="">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">5 señales de alerta en tu gato</h3>
+          <p class="text-sm text-gray-600">Aprende a identificar síntomas tempranos que requieren atención veterinaria.</p>
+          <button class="btn-3d mt-4 readMore">Leer más</button>
+        </div>
+      </article>
+
+      <article class="blogCard" data-aos="fade-up" data-aos-delay="100"
+               data-title="Plan de vacunación canina 2025"
+               data-img="img/Plan de vacunación canina 2025.png"
+               data-content="<p>Mantén al día el calendario de tu perro:<br>• Moquillo y Parvovirus: 6‑8 semanas.<br>• Refuerzo múltiple: 12 semanas.<br>• Rabia: 4 meses.<br>Renueva anualmente las combinadas y cada 3 años la antirrábica (según normativa).</p>">
+        <img src="img/Plan de vacunación canina 2025.png" class="w-full h-44 object-cover" alt="">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Plan de vacunación canina 2025</h3>
+          <p class="text-sm text-gray-600">Calendario recomendado y tips para mantener a tu perro protegido.</p>
+          <button class="btn-3d mt-4 readMore">Leer más</button>
+        </div>
+      </article>
+
+      <article class="blogCard" data-aos="fade-up" data-aos-delay="200"
+               data-title="Nutrición para mascotas senior"
+               data-img="img/Nutrición para mascotas senior.png"
+               data-content="<p>Los animales mayores requieren:<br>• Proteínas de alta calidad.<br>• Menos calorías.<br>• Suplementos articulares (glucosamina).<br>Consulta a tu vet para ajustar la dieta.</p>">
+        <img src="img/Nutrición para mascotas senior.png" class="w-full h-44 object-cover" alt="">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Nutrición para mascotas senior</h3>
+          <p class="text-sm text-gray-600">Consejos para adaptar la dieta de tu compañero en su etapa adulta mayor.</p>
+          <button class="btn-3d mt-4 readMore">Leer más</button>
+        </div>
+      </article>
+
+      <article class="blogCard" data-aos="fade-up" data-aos-delay="300"
+               data-title="Cómo cepillar los dientes de tu perro"
+               data-img="img/Cómo cepillar los dientes de tu perro.png"
+               data-content="<p>• Usa pasta dental específica para perros.<br>• Cepilla a 45 ° sobre la línea de encías.<br>• Comienza poco a poco y refuerza con premios.</p>">
+        <img src="img/Cómo cepillar los dientes de tu perro.png" class="w-full h-44 object-cover" alt="">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Cómo cepillar los dientes de tu perro</h3>
+          <p class="text-sm text-gray-600">Guía paso a paso para una salud bucal impecable.</p>
+          <button class="btn-3d mt-4 readMore">Leer más</button>
+        </div>
+      </article>
+
+      <article class="blogCard" data-aos="fade-up" data-aos-delay="400"
+               data-title="Parásitos internos: desparasitación segura"
+               data-img="img/Parásitos internos.png"
+               data-content="<p>Los parásitos intestinales afectan a 7 de 10 cachorros.<br>Desparasita cada 3 m hasta los 12 m y luego cada 6 m.<br>Usa productos recetados por tu veterinario.</p>">
+        <img src="img/Parásitos internos.png" class="w-full h-44 object-cover" alt="">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Parásitos internos: desparasitación segura</h3>
+          <p class="text-sm text-gray-600">Frecuencia y productos recomendados para gatos y perros.</p>
+          <button class="btn-3d mt-4 readMore">Leer más</button>
+        </div>
+      </article>
+
+      <article class="blogCard" data-aos="fade-up" data-aos-delay="500"
+               data-title="Primeros auxilios para perros"
+               data-img="img/Primeros auxilios para perros.png"
+               data-content="<p>• Sangrado: aplica presión firme.<br>• Golpe de calor: moja con agua tibia y ventila.<br>• Nunca administres medicamentos humanos sin consultar.</p>">
+        <img src="img/Primeros auxilios para perros.png" class="w-full h-44 object-cover" alt="">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Primeros auxilios para perros</h3>
+          <p class="text-sm text-gray-600">Actúa rápido ante emergencias comunes.</p>
+          <button class="btn-3d mt-4 readMore">Leer más</button>
+        </div>
+      </article>
+
+      <article class="blogCard" data-aos="fade-up" data-aos-delay="600"
+               data-title="Guía de socialización para cachorros"
+               data-img="img/Guía de socialización para cachorros.png"
+               data-content="<p>Exponlo gradualmente a ruidos, personas y otros perros.<br>Usa refuerzos positivos.<br>Las primeras 16 semanas son críticas para un temperamento equilibrado.</p>">
+        <img src="img/Guía de socialización para cachorros.png" class="w-full h-44 object-cover" alt="">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Guía de socialización para cachorros</h3>
+          <p class="text-sm text-gray-600">Claves para un perro adulto seguro y sociable.</p>
+          <button class="btn-3d mt-4 readMore">Leer más</button>
+        </div>
+      </article>
+
+      <article class="blogCard" data-aos="fade-up" data-aos-delay="700"
+               data-title="Terapia láser: beneficios en rehabilitación"
+               data-img="img/beneficios en rehabilitación.png"
+               data-content="<p>Reduce la inflamación y acelera la cicatrización.<br>Indicada en artritis, heridas post‑quirúrgicas y lesiones musculares.<br>Sessión dura 10‑15 minutos / zona.</p>">
+        <img src="img/beneficios en rehabilitación.png" class="w-full h-44 object-cover" alt="">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Terapia láser: beneficios en rehabilitación</h3>
+          <p class="text-sm text-gray-600">Tecnología avanzada para una recuperación más rápida.</p>
+          <button class="btn-3d mt-4 readMore">Leer más</button>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== MODAL ===== -->
+<div id="blogModal" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50">
+  <div class="bg-white rounded-2xl shadow-xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh]">
+    <button id="blogClose" class="absolute top-2 right-3 text-gray-500 hover:text-red-600 text-2xl leading-none">&times;</button>
+    <img id="modalBanner" src="" class="w-full h-60 object-cover rounded-xl mb-6" alt="">
+    <h3 id="modalTitle" class="text-3xl font-bold mb-4"></h3>
+    <div id="modalContent" class="prose max-w-none"></div>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-gray-900 text-gray-200 text-center py-6">
+  <p class="text-sm">&copy; 2025 PATITAS FELICES. Todos los derechos reservados.</p>
+</footer>
+
+<!-- ===== SCRIPTS ===== -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script> AOS.init(); </script>
+<script src="assets/cart.js"></script>
+
+<script>
+const modal      = document.getElementById("blogModal");
+const closeBtn   = document.getElementById("blogClose");
+const mBanner    = document.getElementById("modalBanner");
+const mTitle     = document.getElementById("modalTitle");
+const mContent   = document.getElementById("modalContent");
+
+document.querySelectorAll(".readMore").forEach(btn=>{
+  btn.addEventListener("click", ()=>{
+    const card   = btn.closest(".blogCard");
+    mBanner.src  = card.dataset.img;
+    mTitle.textContent = card.dataset.title;
+    mContent.innerHTML = card.dataset.content;
+    modal.classList.remove("hidden");
+  });
+});
+closeBtn.onclick = ()=> modal.classList.add("hidden");
+modal.onclick = e=>{ if(e.target===modal) modal.classList.add("hidden"); };
+</script>
+
+<style>
+.blogCard{background:#fff;border-radius:1rem;box-shadow:0 6px 12px rgb(0 0 0 / .1);overflow:hidden;transition:.25s}
+.blogCard:hover{transform:translateY(-4px);box-shadow:0 10px 15px rgb(0 0 0 / .15)}
+</style>
+</body>
+</html>
