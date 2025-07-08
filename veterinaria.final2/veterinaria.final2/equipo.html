@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VetCare+ | Equipo</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body class="font-sans text-gray-800 scroll-smooth bg-gradient-to-br from-indigo-50 via-sky-50 to-teal-50 c:\Users\LUIS FERNANDO RISCO\Downloads\fondo-patron-mascotas_76433-12.avif.png">
+
+<!-- ===== NAVBAR ===== -->
+<header class="fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur shadow">
+  <div class="container mx-auto flex items-center justify-between px-4 py-3">
+    <a href="index.html" class="text-xl font-bold text-indigo-600">PATITAS FELICES</a>
+    <nav class="space-x-4 font-medium hidden md:inline-block">
+      <a href="index.html"       class="hover:text-indigo-600">Inicio</a>
+      <a href="servicios.html"   class="hover:text-indigo-600">Servicios</a>
+      <a href="equipo.html"      class="text-indigo-600 font-semibold">Equipo</a>
+      <a href="blog.html"        class="hover:text-indigo-600">Blog</a>
+      <a href="promociones.html" class="hover:text-indigo-600">Promos</a>
+      <a href="atencion.html"    class="hover:text-indigo-600">Atención</a>
+      <a href="contacto.html"    class="hover:text-indigo-600">Contactanos</a>
+      <a href="carrito.html"     class="relative hover:text-indigo-600">
+        Carrito
+        <span id="cart-count" class="absolute -top-2 -right-3 bg-red-500 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">0</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<div class="pt-20"></div>
+
+<!-- ===== EQUIPO ===== -->
+<section class="py-24">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-extrabold text-center text-gray-800 mb-16" data-aos="fade-up">
+      Conoce a Nuestro Equipo
+    </h2>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10" id="teamGrid">
+      <!-- 8 doctores con data-* -->
+      <!-- Ejemplo de tarjeta (copia/edita para los otros) -->
+      <button class="doctor card" data-aos="fade-up"
+              data-name="Dra. Ana Pérez"
+              data-role="Médica Veterinaria"
+              data-specialty="Medicina interna"
+              data-ach="• 10 años de experiencia<br>• Cert. ISFM<br>• Ponente VetPerú 2024"
+              data-img="img/Dra. Ana Pérez.png">
+        <img src="img/dra-ana-perez.png" class="avatar" alt="">
+        <h3>Dra. Ana Pérez</h3><p class="role">Médica Veterinaria</p>
+      </button>
+
+      <button class="doctor card" data-aos="fade-up" data-aos-delay="100"
+              data-name="Dr. Luis Gómez"
+              data-role="Cirujano"
+              data-specialty="Traumatología"
+              data-ach="• +500 cirugías exitosas<br>• Fellowship UCM<br>• Miembro AO VET"
+              data-img="img/Dr. Luis Gómez.png.jpg">
+        <img src="img/dr-luis-gomez.png.jpg" class="avatar" alt="">
+        <h3>Dr. Luis Gómez</h3><p class="role">Cirujano</p>
+      </button>
+
+      <button class="doctor card" data-aos="fade-up" data-aos-delay="200"
+              data-name="Dra. Carla Ruiz"
+              data-role="Especialista Felina"
+              data-specialty="Comportamiento y bienestar"
+              data-ach="• Diplomado ISFM<br>• Autores en JFMS<br>• 8 años dedicados a felinos"
+              data-img="img/Dra. Carla Ruiz.png">
+        <img src="img/dra-carla-ruiz.png" class="avatar" alt="">
+        <h3>Dra. Carla Ruiz</h3><p class="role">Especialista Felina</p>
+      </button>
+
+      <button class="doctor card" data-aos="fade-up" data-aos-delay="300"
+              data-name="Dr. Pablo Silva"
+              data-role="Anestesiólogo"
+              data-specialty="Anestesia inhalatoria"
+              data-ach="• Cert. AVA<br>• Monit. TIVA<br>• Cursos internacionales"
+              data-img="img/Dr. Pablo Silva.png">
+        <img src="img/dr-pablo-silva.png" class="avatar" alt="">
+        <h3>Dr. Pablo Silva</h3><p class="role">Anestesiólogo</p>
+      </button>
+
+      <button class="doctor card" data-aos="fade-up" data-aos-delay="400"
+              data-name="Dra. Marta Díaz"
+              data-role="Dermatóloga"
+              data-specialty="Dermatología alérgica"
+              data-ach="• Máster UAB<br>• 1200 pacientes tratados<br>• Speaker RC 2025"
+              data-img="img/Dra. Marta Díaz.png">
+        <img src="img/dra-marta-diaz.png" class="avatar" alt="">
+        <h3>Dra. Marta Díaz</h3><p class="role">Dermatóloga</p>
+      </button>
+
+      <button class="doctor card" data-aos="fade-up" data-aos-delay="500"
+              data-name="Dr. Diego Torres"
+              data-role="Cardiólogo"
+              data-specialty="Eco‑doppler 3D"
+              data-ach="• Residencia Texas A&M<br>• Publicaciones en JVIM<br>• Equipo eco HD"
+              data-img="img/dr">
+        <img src="img/dr-diego-torres.png" class="avatar" alt="">
+        <h3>Dr. Diego Torres</h3><p class="role">Cardiólogo</p>
+      </button>
+
+      <button class="doctor card" data-aos="fade-up" data-aos-delay="600"
+              data-name="Dra. Elena Ortega"
+              data-role="Radióloga"
+              data-specialty="Diagnóstico por imagen"
+              data-ach="• Postgrado Cornell<br>• Manejo TAC/RM<br>• IA para detección temprana"
+              data-img="img/Dra. Elena Ortega.png">
+        <img src="img/dra-elena-ortega.png" class="avatar" alt="">
+        <h3>Dra. Elena Ortega</h3><p class="role">Radióloga</p>
+      </button>
+
+      <button class="doctor card" data-aos="fade-up" data-aos-delay="700"
+              data-name="Dr. Fernando Reyes"
+              data-role="Urgenciólogo"
+              data-specialty="Medicina crítica"
+              data-ach="• ACLS Vet<br>• Turnos 24/7 desde 2015<br>• Líder de equipo ER"
+              data-img="img/Dr. Fernando Reyes.png">
+        <img src="img/dr-fernando-reyes.png" class="avatar" alt="">
+        <h3>Dr. Fernando Reyes</h3><p class="role">Urgencias</p>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MODAL ===== -->
+<div id="modal" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50">
+  <div class="bg-white rounded-2xl shadow-xl max-w-md w-full p-8 relative">
+    <button id="closeBtn" class="absolute top-2 right-3 text-gray-500 hover:text-red-600 text-2xl leading-none">&times;</button>
+    <img id="modalImg" src="" class="w-28 h-28 rounded-full mx-auto mb-4 object-cover shadow" alt="">
+    <h3 id="modalName" class="text-2xl font-bold text-center mb-1"></h3>
+    <p id="modalRole" class="text-center text-indigo-600 mb-4"></p>
+    <h4 class="font-semibold mb-1">Especialidad</h4>
+    <p id="modalSpec" class="mb-4"></p>
+    <h4 class="font-semibold mb-1">Logros destacados</h4>
+    <p id="modalAch" class="text-sm leading-relaxed"></p>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-gray-900 text-gray-200 text-center py-6">
+  <p class="text-sm">&copy; 2025 PATITAS FELICES. Todos los derechos reservados.</p>
+</footer>
+
+<!-- ===== SCRIPTS ===== -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script> AOS.init(); </script>
+<script src="assets/cart.js"></script>
+
+<script>
+/* ----- Modal Logic ----- */
+const modal   = document.getElementById("modal");
+const close   = document.getElementById("closeBtn");
+const mImg    = document.getElementById("modalImg");
+const mName   = document.getElementById("modalName");
+const mRole   = document.getElementById("modalRole");
+const mSpec   = document.getElementById("modalSpec");
+const mAch    = document.getElementById("modalAch");
+
+document.querySelectorAll(".doctor").forEach(btn=>{
+  btn.addEventListener("click", ()=>{
+    mImg.src  = btn.dataset.img;
+    mName.textContent = btn.dataset.name;
+    mRole.textContent = btn.dataset.role;
+    mSpec.textContent = btn.dataset.specialty;
+    mAch.innerHTML    = btn.dataset.ach;
+    modal.classList.remove("hidden");
+  });
+});
+close.onclick = ()=> modal.classList.add("hidden");
+modal.onclick  = e=>{ if(e.target===modal) modal.classList.add("hidden"); };
+</script>
+
+<style>
+.card{background:#fff;border-radius:1rem;padding:1.5rem;text-align:center;box-shadow:0 6px 12px rgb(0 0 0 / .1);transition:.25s;}
+.card:hover{transform:translateY(-4px);box-shadow:0 10px 15px rgb(0 0 0 / .15);}
+.avatar{width:7rem;height:7rem;border-radius:9999px;object-fit:cover;margin:0 auto 0.75rem}
+.role{color:#4b5563;font-size:.875rem}
+</style>
+</body>
+</html> 

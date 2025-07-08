@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VetCare+ | Reservar cita</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- Custom -->
+  <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    /* Mejoras visuales para feedback */
+    
+  </style>
+</head>
+
+<body class="font-sans bg-gradient-to-b from-indigo-100 to-indigo-50 min-h-screen text-gray-900">
+
+  <!-- NAVBAR -->
+  <header class="fixed inset-x-0 top-0 z-50 bg-white/90 backdrop-blur shadow">
+    <div class="container mx-auto flex items-center justify-between px-4 py-3">
+      <a href="index.html" class="text-2xl font-extrabold text-indigo-600 tracking-wide">PATITAS FELICES</a>
+      <nav class="space-x-6 font-medium hidden md:flex items-center">
+        <a href="index.html" class="hover:text-indigo-600 transition">Inicio</a>
+        <a href="servicios.html" class="hover:text-indigo-600 transition">Servicios</a>
+        <a href="equipo.html" class="hover:text-indigo-600 transition">Equipo</a>
+        <a href="blog.html" class="hover:text-indigo-600 transition">Blog</a>
+        <a href="promociones.html" class="hover:text-indigo-600 transition">Promos</a>
+        <a href="atencion.html" class="text-indigo-600 font-semibold cursor-default">Atención</a>
+        <a href="contacto.html"    class="hover:text-indigo-600">Contactanos</a>
+        <a href="carrito.html" class="relative hover:text-indigo-600 transition">
+          Carrito
+          <span id="cart-count"
+            class="absolute -top-2 -right-3 bg-red-500 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Espaciador -->
+  <div class="pt-20"></div>
+
+  <!-- Sección Reserva -->
+  <section class="relative min-h-screen bg-cover bg-center bg-no-repeat"
+    style="background-image: url('https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1600&q=80');">
+    <div class="absolute inset-0 bg-black/70"></div>
+
+    <div class="relative container mx-auto px-4 py-20 max-w-3xl z-10">
+      <div class="bg-white rounded-2xl shadow-2xl p-10 max-w-xl mx-auto text-gray-900"
+        data-aos="fade-up" data-aos-duration="800">
+
+        <!-- Servicio seleccionado -->
+        <p id="servicio-seleccionado" class="text-indigo-700 font-semibold text-lg mb-6"></p>
+
+        <h1 class="text-4xl font-extrabold mb-8 text-center tracking-tight">Registrar cita</h1>
+
+        <form id="pet-form" class="space-y-6" novalidate aria-label="Formulario para registrar cita veterinaria">
+          <input type="hidden" name="service" id="serviceField" aria-hidden="true" />
+
+          <div>
+            <label for="owner" class="block mb-1 font-medium">Nombre del propietario</label>
+            <input id="owner" name="owner" type="text" placeholder="Ej: Juan Pérez" required
+              class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-indigo-600"
+              aria-required="true" aria-describedby="ownerHelp" />
+            <p id="ownerHelp" class="text-xs text-gray-500 mt-1">Tu nombre completo</p>
+          </div>
+
+          <div>
+            <label for="pet" class="block mb-1 font-medium">Nombre de la mascota</label>
+            <input id="pet" name="pet" type="text" placeholder="Ej: Rocky" required
+              class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-indigo-600"
+              aria-required="true" />
+          </div>
+
+          <div>
+            <label for="species" class="block mb-1 font-medium">Especie</label>
+            <select id="species" name="species" required
+              class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-indigo-600"
+              aria-required="true" aria-describedby="speciesHelp">
+              <option value="" disabled selected>Seleccione una especie</option>
+              <option value="Perro">Perro</option>
+              <option value="Gato">Gato</option>
+              <option value="Exótico">Exótico</option>
+            </select>
+            <p id="speciesHelp" class="text-xs text-gray-500 mt-1">Por favor elige una especie</p>
+          </div>
+
+          <div>
+            <label for="reason" class="block mb-1 font-medium">Motivo de la visita</label>
+            <input id="reason" name="reason" type="text" placeholder="Ej: Vacunación anual" required
+              class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-indigo-600"
+              aria-required="true" />
+          </div>
+
+          <button type="submit" class="btn-3d w-full text-center text-lg" aria-live="polite">Registrar cita</button>
+        </form>
+
+        <!-- Citas registradas -->
+        <section aria-live="polite" aria-relevant="additions removals" class="mt-14">
+          <h2 class="text-2xl font-bold mb-4 text-center">Citas registradas</h2>
+          <div id="list" class="space-y-4 min-h-[6rem]">
+            <p class="empty-message">Cargando citas...</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <!-- Toast para feedback -->
+  <div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-gray-200 text-center py-6 mt-12">
+    <p class="text-sm">&copy; 2025 PATITAS FELICES. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, easing: "ease-in-out" });
+  </script>
+  <script src="assets/cart.js"></script>
+  <script>
+    (() => {
+      "use strict";
+
+      // Toast notification helper
+      const toast = document.getElementById("toast");
+      const showToast = (msg, duration = 2500) => {
+        toast.textContent = msg;
+        toast.classList.add("show");
+        setTimeout(() => toast.classList.remove("show"), duration);
+      };
+
+      // Leer parámetro "servicio" y mostrar en UI
+      const params = new URLSearchParams(location.search);
+      const servicio = params.get("servicio");
+      if (servicio) {
+        const decoded = decodeURIComponent(servicio);
+        document.getElementById("servicio-seleccionado").textContent =
+          `Reservar cita para: ${decoded}`;
+        document.getElementById("serviceField").value = decoded;
+      } else {
+        document.getElementById("servicio-seleccionado").textContent =
+          "Reservar cita general";
+      }
+
+      // Clave para localStorage
+      const STORAGE_KEY = "appointments";
+
+      // Referencias DOM
+      const form = document.getElementById("pet-form");
+      const list = document.getElementById("list");
+
+      // Carga y renderiza las citas desde localStorage
+      function loadAppointments() {
+        let data = [];
+        try {
+          data = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+          if (!Array.isArray(data)) throw new Error("Datos corruptos");
+        } catch {
+          data = [];
+          localStorage.removeItem(STORAGE_KEY);
+        }
+
+        if (!data.length) {
+          list.innerHTML =
+            '<p class="empty-message">No hay citas registradas aún.</p>';
+          return;
+        }
+
+        list.innerHTML = data
+          .map(
+            (d, i) => `
+          <article class="bg-white rounded-lg shadow p-4 flex justify-between items-center" role="listitem" aria-label="Cita de ${d.pet}">
+            <div>
+              <p class="font-semibold text-indigo-700 text-lg">${escapeHTML(d.pet)}</p>
+              <p class="text-gray-700">${escapeHTML(d.species)} - ${escapeHTML(d.reason)}</p>
+              <p class="text-sm text-gray-500">Servicio: ${escapeHTML(d.service || "N/A")} · Propietario: ${escapeHTML(d.owner)}</p>
+            </div>
+            <button class="text-red-600 font-bold text-2xl leading-none" aria-label="Eliminar cita de ${escapeHTML(d.pet)}" data-del="${i}">×</button>
+          </article>`
+          )
+          .join("");
+      }
+
+      // Escapar para evitar XSS
+      function escapeHTML(text) {
+        if (!text) return "";
+        return text
+          .toString()
+          .replace(/[&<>"']/g, (m) => {
+            return {
+              "&": "&amp;",
+              "<": "&lt;",
+              ">": "&gt;",
+              '"': "&quot;",
+              "'": "&#39;",
+            }[m];
+          });
+      }
+
+      // Añadir cita y validar mínimo
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const entry = Object.fromEntries(formData.entries());
+
+        // Validaciones extras
+        if (!entry.owner.trim()) return alert("Por favor, ingresa el nombre del propietario.");
+        if (!entry.pet.trim()) return alert("Por favor, ingresa el nombre de la mascota.");
+        if (!entry.species) return alert("Por favor, selecciona una especie.");
+        if (!entry.reason.trim()) return alert("Por favor, ingresa el motivo de la visita.");
+
+        // Cargar citas, añadir nueva, guardar
+        let data = [];
+        try {
+          data = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+          if (!Array.isArray(data)) throw new Error("Datos corruptos");
+        } catch {
+          data = [];
+        }
+
+        data.push({
+          owner: entry.owner.trim(),
+          pet: entry.pet.trim(),
+          species: entry.species,
+          reason: entry.reason.trim(),
+          service: entry.service || "General",
+          timestamp: Date.now(),
+        });
+
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+
+        form.reset();
+        loadAppointments();
+        showToast("Cita registrada con éxito ✅");
+      });
+
+      // Eliminar cita
+      list.addEventListener("click", (e) => {
+        const btn = e.target.closest("[data-del]");
+        if (!btn) return;
+
+        if (!confirm("¿Deseas eliminar esta cita?")) return;
+
+        let data = [];
+        try {
+          data = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+          if (!Array.isArray(data)) throw new Error("Datos corruptos");
+        } catch {
+          data = [];
+        }
+
+        data.splice(+btn.dataset.del, 1);
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+        loadAppointments();
+        showToast("Cita eliminada ✅");
+      });
+
+      // Inicializar UI
+      loadAppointments();
+    })();
+  </script>
+
+</body>
+
+</html>
+s
